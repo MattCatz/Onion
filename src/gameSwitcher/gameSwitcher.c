@@ -203,7 +203,7 @@ void printHistory()
         printf_debug("name: %s\n", game_list[i].name);
         printf_debug("shortname: %s\n", game_list[i].shortname);
         printf_debug("LaunchCommand: %s\n", game_list[i].LaunchCommand);
-        printf_debug("totalTime: %i\n", game_list[i].totalTime);
+        printf_debug("totalTime: %s\n", game_list[i].totalTime);
         printf_debug("gameIndex: %i\n", game_list[i].gameIndex);
         printf_debug("lineNumber: %i\n", game_list[i].lineNumber);
         printf_debug("romImagePath: %s\n", game_list[i].romImagePath);
@@ -348,7 +348,7 @@ void readHistory()
         printf_debug("name: %s\n", game->name);
         printf_debug("shortname: %s\n", game->shortname);
         printf_debug("LaunchCommand: %s\n", game->LaunchCommand);
-        printf_debug("totalTime: %i\n", game->totalTime);
+        printf_debug("totalTime: %s\n", game->totalTime);
         printf_debug("gameIndex: %i\n", game->gameIndex);
         printf_debug("lineNumber: %i\n", game->lineNumber);
         printf_debug("romImagePath: %s\n", game->romImagePath);

@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
                 printf_debug("Charging detected - Previous session duration = %d\n", session_time);
 
                 if (session_time > best_session_time) {
-                    printf_debug("Best session duration\n", 1);
+                    print_debug("Best session duration");
                     set_best_session_time(session_time);
                     best_session_time = session_time;
                 }
