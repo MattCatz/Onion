@@ -13,14 +13,12 @@ endif
 
 LIB = /mnt/SDCARD/.tmp_update/lib
 
-CC 		= $(CROSS_COMPILE)gcc
-CXX 	= $(CROSS_COMPILE)g++
-STRIP 	= $(CROSS_COMPILE)strip
+CC 		?= $(CROSS_COMPILE)gcc
+CXX 	?= $(CROSS_COMPILE)g++
+STRIP 	?= $(CROSS_COMPILE)strip
+PKG_CONFIG ?= $(CROSS_COMPILE)pkg-config
 
 SOURCES := $(SOURCES) .
-ifeq ($(INCLUDE_CJSON),1)
-SOURCES := $(SOURCES) ../../include/cjson
-endif
 ifneq ($(INCLUDE_UTILS),0)
 CFILES := $(CFILES) \
 	../common/utils/str.c \
@@ -31,7 +29,8 @@ CFILES := $(CFILES) $(foreach dir, $(SOURCES), $(wildcard $(dir)/*.c))
 CPPFILES := $(CPPFILES) $(foreach dir, $(SOURCES), $(wildcard $(dir)/*.cpp))
 OFILES = $(CFILES:.c=.o) $(CPPFILES:.cpp=.o)
 
-CFLAGS := -I../../include -I../common -DPLATFORM_$(shell echo $(PLATFORM) | tr a-z A-Z) -DONION_VERSION="\"$(VERSION)\"" -Wall
+SDL_FLAGS := $(shell $(PKG_CONFIG) --cflags --libs sdl SDL_image SDL_ttf)
+CFLAGS := -I../common $(SDL_FLAGS) -DPLATFORM_$(shell echo $(PLATFORM) | tr a-z A-Z) -DONION_VERSION="\"$(VERSION)\"" -Wall
 
 ifeq ($(DEBUG),1)
 CFLAGS := $(CFLAGS) -DLOG_DEBUG -g3
@@ -49,6 +48,9 @@ endif
 
 CXXFLAGS := $(CFLAGS)
 LDFLAGS := $(LDFLAGS) -L../../lib -L/usr/local/lib
+ifeq ($(INCLUDE_CJSON),1)
+LDFLAGS := $(LDFLAGS) -lcjson
+endif
 
 ifeq ($(PLATFORM),miyoomini)
 CFLAGS := $(CFLAGS) -marm -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7ve -Wl,-rpath=$(LIB)

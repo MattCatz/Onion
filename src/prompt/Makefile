@@ -4,7 +4,7 @@ include ../common/config.mk
 
 TARGET = prompt
 CFLAGS := $(CFLAGS) -DHAS_AUDIO
-LDFLAGS := $(LDFLAGS) -lSDL -lSDL_ttf -lSDL_image -lSDL_mixer -lSDL_rotozoom -pthread
+LDFLAGS := $(LDFLAGS) -lSDL -lSDL_ttf -lSDL_image -lSDL_mixer -lSDL_gfx -pthread
 
 include ../common/commands.mk
 include ../common/recipes.mk
