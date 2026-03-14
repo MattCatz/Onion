@@ -1,7 +1,7 @@
 #ifndef SCREENSHOT_H__
 #define SCREENSHOT_H__
 
-#include <png/png.h>
+#include <libpng16/png.h>
 #include <signal.h>
 #include <stdio.h>
 #include <sys/types.h>

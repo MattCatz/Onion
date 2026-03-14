@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include <pthread.h>
 #include <signal.h>
-#include <sqlite3/sqlite3.h>
+#include <sqlite3.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>

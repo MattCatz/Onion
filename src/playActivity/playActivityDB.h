@@ -4,7 +4,7 @@
 #include <dirent.h>
 #include <libgen.h>
 #include <limits.h>
-#include <sqlite3/sqlite3.h>
+#include <sqlite3.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

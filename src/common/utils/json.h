@@ -5,9 +5,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <cjson/cJSON.h>
 
 #include "./file.h"
-#include "cjson/cJSON.h"
 
 #define JSON_STRING_LEN 256
 #define JSON_FORMAT_NUMBER "    \"%s\": %d,\n"

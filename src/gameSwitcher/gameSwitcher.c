@@ -5,7 +5,7 @@
 #include <libgen.h>
 #include <linux/fb.h>
 #include <pthread.h>
-#include <sqlite3/sqlite3.h>
+#include <sqlite3.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -14,7 +14,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include "png/png.h"
+#include "libpng16/png.h"
 
 #include "system/battery.h"
 #include "system/lang.h"

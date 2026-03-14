@@ -1,5 +1,5 @@
 #include <libgen.h>
-#include <sqlite3/sqlite3.h>
+#include <sqlite3.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>

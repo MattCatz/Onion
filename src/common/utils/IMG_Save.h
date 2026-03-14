@@ -1,7 +1,7 @@
 #ifndef SAVE_IMAGE_H__
 #define SAVE_IMAGE_H__
 
-#include "png/png.h"
+#include "libpng16/png.h"
 #include <SDL/SDL.h>
 #include <stdlib.h>
 

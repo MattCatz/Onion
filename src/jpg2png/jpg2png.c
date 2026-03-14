@@ -1,11 +1,12 @@
-#include <jpeglib.h>
-#include <mi_gfx.h>
-#include <mi_sys.h>
-#include <png.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
+#include <jpeglib.h>
+#include <mi_gfx.h>
+#include <mi_sys.h>
+#include <png.h>
 
 #define ALIGN4K(val) ((val + 4095) & (~4095))
 

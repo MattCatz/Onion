@@ -2,7 +2,7 @@
 #define CACHE_DB_H
 
 #include <libgen.h>
-#include <sqlite3/sqlite3.h>
+#include <sqlite3.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

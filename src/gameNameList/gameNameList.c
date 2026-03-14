@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <libgen.h>
-#include <sqlite3/sqlite3.h>
+#include <sqlite3.h>
 #include <dlfcn.h>
 
 #include "gamename.h"
